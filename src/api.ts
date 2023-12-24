@@ -17,12 +17,20 @@ router.delete('/', async (req, res) => {
 router.get('/', async (req, res) => {
   console.log('Perform list', req.query, req.params);
 
-  return res.json({
-    event: 'PROPOSAL_CREATED',
-    network: 'sn',
-    space: '0x123',
-    proposal: 1
-  });
+  return res.json([
+    {
+      event: 'PROPOSAL_CREATED',
+      network: 'sn',
+      space: '0x123',
+      proposal: 1
+    },
+    {
+      event: 'PROPOSAL_CREATED',
+      network: 'sn',
+      space: '0x123',
+      proposal: 2
+    }
+  ]);
 });
 
 export default router;
